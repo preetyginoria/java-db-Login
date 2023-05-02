@@ -5,7 +5,7 @@ pipeline {
     }
 
     stages {
-        stage('fetch the code') {
+        stage('fetch the new code') {
             steps {
                 git branch: 'develop', url: 'https://github.com/preetyginoria/java-db-Login.git'
             }
