@@ -71,11 +71,10 @@
     - name: Install boto3 and botocore with pip3 module
       pip:
         name:
-          - boto
           - boto3
           - botocore
         executable: pip3
-      tags: boto-lib-install
+     
 
     - name: copy the war file
       aws_s3:
