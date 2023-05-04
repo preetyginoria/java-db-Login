@@ -51,7 +51,7 @@
   tasks:
     - name: Install Python 3.9.14
       yum:
-        name: python36
+        name: python3.9
         state: present
       tags: python-install
 
