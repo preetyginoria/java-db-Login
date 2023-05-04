@@ -49,7 +49,7 @@
   hosts: webservers
   become: yes
   tasks:
-    - name: Install Python 3.6
+    - name: Install Python 3.9.14
       yum:
         name: python36
         state: present
@@ -58,7 +58,7 @@
     - name: alternatives
       alternatives:
         name: python
-        link: /usr/bin/python3.6
+        link: /usr/bin/python3.9.14
         path: /usr/bin/python3
       tags: python-alternatives
 
