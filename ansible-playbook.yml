@@ -68,6 +68,12 @@
   vars:
     ansible_python_interpreter: /usr/bin/python
   tasks:
+    - name: Install pip3
+      channels:
+        - defaults
+      dependencies:
+        - python=3
+        - pip
     - name: Install boto3 and botocore with pip3 module
       pip:
         name:
