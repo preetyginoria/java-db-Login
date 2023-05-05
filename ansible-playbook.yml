@@ -68,7 +68,7 @@
   vars:
     ansible_python_interpreter: /usr/bin/python
   tasks:
-    - name: Install pip3
+      name: Install pip3
       channels:
         - defaults
       dependencies:
