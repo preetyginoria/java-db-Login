@@ -63,7 +63,7 @@
           #- docker-py
         - jsondiff
         - pyyaml
-       executable: pip 21.2.3 
+       executable: pip3
       register: out3
       tags: docker-lib-install
     - debug:
