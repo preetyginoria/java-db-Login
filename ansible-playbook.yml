@@ -67,7 +67,7 @@
   become: yes
   vars:
     ansible_python_interpreter: /usr/bin/python
-  tasks   
+  tasks:   
     - name: Install boto3 and botocore with pip3 module
       pip:
         name:
