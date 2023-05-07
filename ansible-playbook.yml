@@ -27,7 +27,7 @@
   hosts: dockerMaster
   become: yes
   tasks:
-    - name: Install Python 3.6
+    - name: Install Python 3.9.14
       yum:
         name: python36
         state: present
@@ -40,9 +40,8 @@
     - name: alternatives
       alternatives:
         name: python
-        link: /usr/bin/python3.6
-        path: /usr/bin/python3
-      register: out2
+        link: /usr/bin/python3.9
+        path: /usr/bin/python3.9
       tags:
         - python-alternatives
     - debug:
@@ -52,7 +51,7 @@
   hosts: dockerMaster
   become: yes
   vars:
-    ansible_python_interpreter: /usr/bin/python3
+    ansible_python_interpreter: /usr/bin/python3.9
   tasks:
     - name: Install boto3 and botocore with pip3 module
       pip:
@@ -64,7 +63,7 @@
           #- docker-py
         - jsondiff
         - pyyaml
-       executable: pip3.6
+       executable: pip 21.2.3 
       register: out3
       tags: docker-lib-install
     - debug:
