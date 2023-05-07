@@ -49,7 +49,7 @@
   hosts: webservers
   become: yes
   tasks:
-    - name: Install Python 3.9.14
+    - name: Install Python 3.9
       yum:
         name: python3.9
         state: present
@@ -58,7 +58,7 @@
     - name: alternatives
       alternatives:
         name: python
-        link: /usr/bin/python3.9.14
+        link: /usr/bin/python3.9
         path: /usr/bin/python
       tags: python-alternatives
 
@@ -67,14 +67,7 @@
   become: yes
   vars:
     ansible_python_interpreter: /usr/bin/python
-  tasks:
-    - name: Install pip3
-      channels:
-        - defaults
-      dependencies:
-        - python=3.9
-        - pip
-        
+  tasks   
     - name: Install boto3 and botocore with pip3 module
       pip:
         name:
